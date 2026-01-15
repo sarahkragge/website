@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knee Check</title>
+
+    <!-- Favicon / Tab icon -->
+    <link rel="icon" href="media/KneeCheck_App_Logo.png" type="image/png" sizes="32x32" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header / Navigation -->
+    <header class="header">
+      <div class="container header-content">
+
+        <a class="brand" href="#home">
+          <img class="brand-logo" src="media/KneeCheck_App_Logo.png" alt="KneeCheck Logo" />
+          <span class="brand-text">KneeCheck</span>
+        </a>
+
+        <nav class="main-nav">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#trailer">Trailer</a>
+          <a class="nav-link" href="#download">Download</a>
+          <a class="nav-link" href="#team">Team</a>
+        </nav>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME / Intro section -->
+      <section id="home" class="page-section intro">
+        <div class="container intro-content">
+          <div class="intro-text">
+            <h1>KneeCheck</h1>
+            <p class="slogan">When pain starts, your plan begins</p>
+            <p class="lead">
+              Knee pain but not sure what to do? KneeCheck helps you understand how urgent your pain is, guides you through safe exercises, and keeps you on track with an AI voice coach and smart motivation. Turn confusion and pain into a clear plan for recovery
+            </p>
+
+            <div class="button-row">
+              <a class="button" href="#download">Download</a>
+              <a class="button" href="#features">See Features</a>
+            </div>
+          </div>
+
+          <div class="intro-media">
+            <img src="media/KneeCheck_App_Logo.png" alt="KneeCheck App Logo" class="intro-logo">
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="page-section section-navy features-section">
+        <div class="container">
+          <h2 class="section-title">FEATURES</h2>
+
+          <div class="features-list">
+            <article class="feature-row">
+              <div class="feature-media">
+                <img class="feature-visual" src="media/Bild-Diagnose1.png" alt="Self-diagnosis">
+              </div>
+              <div class="feature-copy">
+                <p class="eyebrow">guides you</p>
+                <h3>Guided self-diagnosis</h3>
+                <p>
+                  KneeCheck leads you through a structured checklist to assess your knee pain step by step. At the end you
+                  receive a clear indication whether home care is reasonable or whether you should seek medical help -
+                  and how urgent it is.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-media">
+                <img class="feature-visual" src="media/Bild-Painlevel.jpg" alt="Pain log">
+              </div>
+              <div class="feature-copy">
+                <p class="eyebrow">track symptoms</p>
+                <h3>Tracking pain levels</h3>
+                <p>
+                  Log your knee pain in seconds with an intuitive scale and short notes. KneeCheck visualizes your pain history
+                  so you and your doctor can see how symptoms evolve over days, weeks, and months.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-media">
+                <img class="feature-visual" src="media/Bild-Gamification1.png" alt="Gamification">
+              </div>
+              <div class="feature-copy">
+                <p class="eyebrow">stay consistent</p>
+                <h3>Motivating gamification</h3>
+                <p>
+                  KneeCheck turns your rehab into a small game: earn points, keep streaks, and unlock milestones when you
+                  complete your exercises. Gentle reminders and rewards help you stay consistent - even on low-motivation days.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-media">
+                <img class="feature-visual" src="media/Bild-Exercises.png" alt="Exercise guide">
+              </div>
+              <div class="feature-copy">
+                <p class="eyebrow">personalized</p>
+                <h3>Personalized exercise library</h3>
+                <p>
+                  Based on your diagnosis and profile, KneeCheck suggests safe, knee-friendly exercises with clear instructions
+                  and offline videos. Your personal plan adapts over time so you always know what to do today - and what to avoid.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-media">
+                <img class="feature-visual" src="media/Bild-VoiceCoach.png" alt="Voice coach">
+              </div>
+              <div class="feature-copy">
+                <p class="eyebrow">real-time support</p>
+                <h3>AI voice coach</h3>
+                <p>
+                  KneeCheck's AI Voice Coach guides you through every exercise in real time. It explains the setup, counts reps,
+                  tells you when to hold or rest, and answers your questions like "Am I doing this right?" or "Can we pause?".
+                  You can talk to the coach naturally, stay focused on movement instead of your phone, and feel supported throughout every session.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAILER (alternate background) -->
+      <section id="trailer" class="page-section section-gradient">
+        <div class="container">
+          <h2 class="section-title">TRAILER</h2>
+
+          <div class="trailer-card">
+            <div class="trailer-player" id="trailerPlayer">
+              <video class="trailer-video" id="trailerVideo" preload="metadata">
+                <source src="media/KneeCheck_Trailer.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
+              <button class="trailer-play" type="button" aria-label="Play trailer">
+                <span class="trailer-play-btn"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (() => {
+          const player = document.getElementById("trailerPlayer");
+          const video = document.getElementById("trailerVideo");
+          const overlay = player?.querySelector(".trailer-play");
+          if (!player || !video || !overlay) return;
+
+          const sync = () => {
+            player.classList.toggle("trailer-playing", !video.paused && !video.ended);
+          };
+
+          overlay.addEventListener("click", () => {
+            video.setAttribute("controls", "");
+            video.play();
+          });
+
+          video.addEventListener("play", sync);
+          video.addEventListener("pause", sync);
+          video.addEventListener("ended", sync);
+          sync();
+        })();
+      </script>
+
+      <!-- DOWNLOAD -->
+      <section id="download" class="page-section section-navy">
+        <div class="container">
+          <div class="download-panel">
+            <h2 class="download-heading">NOW AVAILABLE</h2>
+            <div class="download-content">
+              <div class="download-visual">
+                <img src="media/KneeCheck_App_Logo.png" alt="KneeCheck App logo" />
+                <img class="download-store-button" src="media/Download-Button.svg" alt="Download on the App Store" />
+              </div>
+              <div class="download-copy">
+                <p class="download-description">
+                  KneeCheck blends self-assessment, guided exercises, and motivation in one place. Download the app to
+                  keep your knees ready for campus days and every adventure. Available now for iOS.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM (alternate background) -->
+      <section id="team" class="page-section section-gradient">
+        <div class="container">
+          <div class="team-layout">
+            <!-- Team text column: heading, intro, names list -->
+            <div class="team-text">
+              <h2 class="section-title">Team</h2>
+              <p class="team-intro">
+                We're a group of dedicated students from the University of Hamburg, brought together by a shared passion for innovation.
+                As part of a university project, we developed this app in collaboration with our client to support people with knee pain.
+                Under the guidance of our mentor and supervisor Ali Ebrahimi Pourasad, we combined creativity, research, and teamwork to turn an idea into a practical tool for patients.
+                Get to know the team behind the project!
+              </p>
+              <ul class="team-list">
+                <li>Alexander Kluge</li>
+                <li>Lennart Raabe-Tausche</li>
+                <li>Milad Kakar</li>
+                <li>Nicole Jun</li>
+                <li>Sarah Kragge</li>
+                <li>Tim Wehning</li>
+              </ul>
+            </div>
+
+            <!-- Team gallery: staggered portrait grid -->
+            <div class="team-gallery">
+              <img src="media/gitlabfoto_alex.jpg" alt="Alex" class="team-photo">
+              <img src="media/gitlabfoto_lennart.JPG" alt="Lennart" class="team-photo">
+              <img src="media/gitlabfoto_milad.jpeg" alt="Milad" class="team-photo">
+              <img src="media/gitlabfoto_nicole.jpg" alt="Nicole" class="team-photo">
+              <img src="media/gitLabFoto_Sarah.jpg" alt="Sarah" class="team-photo">
+              <img src="media/gitlabfoto_tim.jpeg" alt="Tim" class="team-photo">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer-grid">
+
+        <div class="footer-block">
+          <h3>About this Project</h3>
+          <p>
+            This is a university project for a <strong>FAKE</strong> application.
+            <br>
+            We make no claims of copyright on the names or images.
+          </p>
+        </div>
+
+        <div class="footer-block footer-logos">
+          <img class="footer-logo" src="media/KneeCheck_App_Logo.png" alt="KneeCheck Logo">
+          <img class="footer-logo" src="media/mlab-logo.png" alt="M-Lab Logo">
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Scroll-to-top Button -->
+    <a class="scroll-top" href="#home" aria-label="Back to top">
+    </a>
+
+    <script>
+      (() => {
+        const images = document.querySelectorAll(".feature-visual");
+        if (!images.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 }
+        );
+
+        images.forEach((img) => observer.observe(img));
+      })();
+    </script>
+  </body>
+</html>
