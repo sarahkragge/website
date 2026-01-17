@@ -143,42 +143,19 @@
           <h2 class="section-title">TRAILER</h2>
 
           <div class="trailer-card">
-            <div class="trailer-player" id="trailerPlayer">
-              <video class="trailer-video" id="trailerVideo" preload="metadata">
-                <source src="media/KneeCheck_Trailer.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              <button class="trailer-play" type="button" aria-label="Play trailer">
-                <span class="trailer-play-btn"></span>
-              </button>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/njSx7L6lGc0?si=1nJh5pL3NZh9NU4c&controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
         </div>
       </section>
-
-      <script>
-        (() => {
-          const player = document.getElementById("trailerPlayer");
-          const video = document.getElementById("trailerVideo");
-          const overlay = player?.querySelector(".trailer-play");
-          if (!player || !video || !overlay) return;
-
-          const sync = () => {
-            player.classList.toggle("trailer-playing", !video.paused && !video.ended);
-          };
-
-          overlay.addEventListener("click", () => {
-            video.setAttribute("controls", "");
-            video.play();
-          });
-
-          video.addEventListener("play", sync);
-          video.addEventListener("pause", sync);
-          video.addEventListener("ended", sync);
-          sync();
-        })();
-      </script>
 
       <!-- DOWNLOAD -->
       <section id="download" class="page-section section-navy">
