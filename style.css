@@ -554,16 +554,16 @@ h4,
 
 @media (max-width: 640px) {
   .team-gallery {
-    gap: 16px;
+    gap: 12px;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
   .team-photo {
     grid-row-end: span 1;
+    width: min(360px, 100%);
     height: auto;
-    max-height: 160px;
-    aspect-ratio: 3 / 2;
-    width: 100%;
+    object-fit: contain;
+    align-self: center;
   }
 }
 
