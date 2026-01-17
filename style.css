@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --accent: #0b3464;
   --navy: #000044;
   --navy-rgb: 0, 0, 68;
@@ -398,7 +398,7 @@ h4,
 
 /* Download section hero card */
 .download-panel {
-  background: linear-gradient(135deg, rgba(11, 52, 100, 0.85), rgba(3, 25, 52, 0.95));
+  background: linear-gradient(135deg, rgba(179, 195, 240, 1) 0%, rgba(255, 255, 255, 0.8) 19%, rgba(239, 239, 239, 1) 59%, rgba(0, 0, 102, 1) 100%);
   border-radius: 18px;
   padding: 60px;
   margin: 0 auto;
@@ -423,6 +423,7 @@ h4,
   font-size: 34px;
   font-weight: 700;
   letter-spacing: 0.2em;
+  color: #000000;
 }
 
 .download-content {
@@ -444,11 +445,16 @@ h4,
   width: 100%;
   max-width: 220px;
   border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.download-visual img.download-logo {
+  width: clamp(260px, 45vw, 520px);
+  max-width: 520px;
+  border-radius: 20px;
 }
 
 .download-store-button {
-  width: 180px;
+  width: 120px;
   height: auto;
   display: block;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -463,6 +469,7 @@ h4,
   font-size: 1.15rem;
   line-height: 1.7;
   text-align: left;
+  color: #000000;
 }
 
 .download-description {
@@ -598,7 +605,7 @@ h4,
 
 .footer-logos {
   display: flex;
-  gap: 18px;
+  gap: 50px;
   justify-content: flex-end;
   align-items: center;
 }
@@ -655,6 +662,9 @@ h4,
   }
   .header-content {
     height: 56px;
+  }
+  .main-nav {
+    display: none;
   }
 }
 
