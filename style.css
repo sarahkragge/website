@@ -700,13 +700,13 @@ h4,
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 24px;
+    gap: 34px;
     margin-top: 8px;
   }
   .intro .button-row .button {
     width: min(220px, 80%);
-    padding: 12px 22px;
-    font-size: 0.95rem;
+    padding: 14px 24px;
+    font-size: 1rem;
   }
   .footer-grid {
     grid-template-columns: 1fr;
