@@ -709,6 +709,7 @@ h4,
     padding: 14px 24px;
     font-size: 1rem;
     display: block;
+    margin-inline: auto;
   }
   .intro .button-row .button + .button {
     margin-top: 16px;
